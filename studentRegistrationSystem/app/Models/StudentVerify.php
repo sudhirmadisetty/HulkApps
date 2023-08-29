@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class StudentVerify extends Model
 {
@@ -33,7 +34,7 @@ class StudentVerify extends Model
     public function getFmtCreatedAtAttribute()
     {
         if (isset($this->attributes['created_at'])) {
-            return \Carbon::parse($this->attributes['created_at'])->setTimezone('Asia/Kolkata')->format('d M Y h:i A');
+            return Carbon::parse($this->attributes['created_at'])->setTimezone('Asia/Kolkata')->format('d M Y h:i A');
         }
     }
 }

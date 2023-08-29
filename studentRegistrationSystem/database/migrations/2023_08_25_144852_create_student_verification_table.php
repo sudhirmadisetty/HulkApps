@@ -19,11 +19,10 @@ class CreateStudentVerificationTable extends Migration
             $table->bigInteger('student_id');
             $table->foreign('student_id')->references('id')->on('students_details')->onUpdate('cascade')->onDelete('cascade');
 
-            $table->string('status');
+            $table->boolean('status')->default(false);
 
             $table->bigInteger('admin_id');
             $table->foreign('admin_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-
 
             $table->timestamps();
             $table->softDeletes();

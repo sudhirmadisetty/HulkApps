@@ -31,7 +31,7 @@
                     Welcome to Admin Portal!</h3>        
                 <?php } else{  ?>
                     <h3 class="text-secondary"> Hi <?php print(Auth::user()->name); ?> <br>
-                    Welcome to Employee Portal! </h3>
+                    Welcome to Student Portal! </h3>
                 </div>
                 <?php }  ?>
             </div>

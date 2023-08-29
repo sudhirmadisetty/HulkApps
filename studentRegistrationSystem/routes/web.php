@@ -44,3 +44,10 @@ Route::post('registration/add',[StudentController::class, 'createStudentRegistra
 //edit the student registration by admin only
 Route::post('registration/edit',[StudentController::class, 'editStudentRegistration'])->name('register-edit');
 
+
+//add students in bulk upload
+Route::post('bulk/registration/create',[StudentController::class, 'bulkUploadStudentRegistration'])->name('bulk-register-add');
+
+
+//export data of students
+Route::get('/export-students', [StudentController::class, 'exportStudents'])->name('export.students');

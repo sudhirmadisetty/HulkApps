@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Carbon\Carbon;
+
 
 class User extends Authenticatable
 {
@@ -46,7 +48,7 @@ class User extends Authenticatable
     public function getFmtCreatedAtAttribute()
     {
         if (isset($this->attributes['created_at'])) {
-            return \Carbon::parse($this->attributes['created_at'])->setTimezone('Asia/Kolkata')->format('d M Y h:i A');
+            return Carbon::parse($this->attributes['created_at'])->setTimezone('Asia/Kolkata')->format('d M Y h:i A');
         }
     }
 
